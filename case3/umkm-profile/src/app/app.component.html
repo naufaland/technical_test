@@ -1,0 +1,138 @@
+<!-- Website Profil UMKM Rumah Makan Padang -->
+<main class="main-container">
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="nav-container">
+      <h1 class="logo">Rumah Makan Padang Sederhana</h1>
+      <nav class="nav-menu">
+        <a href="#beranda" class="nav-link active">Beranda</a>
+        <a href="#tentang" class="nav-link">Tentang Kami</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#kontak" class="nav-link">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="beranda" class="hero">
+    <div class="hero-content">
+      <h2 class="hero-title">Selamat Datang di Rumah Makan Padang Sederhana</h2>
+      <p class="hero-subtitle">
+        Nikmati cita rasa autentik masakan Padang dengan bumbu rempah pilihan
+        dan resep turun temurun
+      </p>
+      <button class="cta-button" (click)="scrollToMenu()">Lihat Menu</button>
+    </div>
+  </section>
+
+  <!-- Banner Section -->
+  <section class="banner">
+    <div class="container">
+      <div class="banner-image">
+        <img
+          src="images/Banner.png"
+          alt="Banner Rumah Makan Padang Sederhana"
+          class="banner-img"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Tentang Kami Section -->
+  <section id="tentang" class="about">
+    <div class="container">
+      <h2 class="section-title">Tentang Kami</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            Rumah Makan Padang Sederhana telah melayani pelanggan sejak tahun
+            2010 dengan komitmen memberikan cita rasa masakan Padang yang
+            autentik. Kami menggunakan bumbu dan rempah pilihan yang diracik
+            secara tradisional.
+          </p>
+          <p>
+            Dengan pengalaman lebih dari 15 tahun, kami bangga menjadi salah
+            satu rumah makan Padang terpercaya yang mengutamakan kualitas dan
+            kepuasan pelanggan.
+          </p>
+        </div>
+        <div class="about-features">
+          <div class="feature">
+            <h4>🏆 Kualitas Terbaik</h4>
+            <p>Bahan-bahan segar dan bumbu autentik</p>
+          </div>
+          <div class="feature">
+            <h4>👨‍🍳 Chef Terlatih</h4>
+            <p>Dimasak oleh chef asli Minang</p>
+          </div>
+          <div class="feature">
+            <h4>🏠 Suasana Nyaman</h4>
+            <p>Tempat yang bersih dan nyaman</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="menu">
+    <div class="container">
+      <h2 class="section-title">Menu Pilihan</h2>
+      <div class="menu-grid">
+        <div class="menu-item" *ngFor="let item of menuItems">
+          <div class="menu-image">
+            <span class="menu-emoji">{{ item.emoji }}</span>
+          </div>
+          <h3 class="menu-name">{{ item.name }}</h3>
+          <p class="menu-description">{{ item.description }}</p>
+          <span class="menu-price">{{ item.price }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak Section -->
+  <section id="kontak" class="contact">
+    <div class="container">
+      <h2 class="section-title">Hubungi Kami</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <h4>Alamat</h4>
+            <p>Jl. Raya Padang No. 123<br />Padang, Sumatera Barat 25118</p>
+          </div>
+          <div class="contact-item">
+            <h4>Telepon</h4>
+            <p>123-456-7890</p>
+          </div>
+          <div class="contact-item">
+            <h4>Jam Buka</h4>
+            <p>Senin - Minggu<br />09:00 - 22:00 WIB</p>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3>Kirim Pesan</h3>
+          <form
+            (ngSubmit)="onSubmitMessage(nameInput, emailInput, messageInput)"
+          >
+            <input type="text" placeholder="Nama Anda" #nameInput required />
+            <input type="email" placeholder="Email Anda" #emailInput required />
+            <textarea
+              placeholder="Pesan Anda"
+              #messageInput
+              required
+            ></textarea>
+            <button type="submit" class="submit-button">Kirim Pesan</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Rumah Makan Padang Sederhana. Semua hak dilindungi.</p>
+    </div>
+  </footer>
+</main>
